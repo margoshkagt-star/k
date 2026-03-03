@@ -215,7 +215,7 @@ System.out.println("X:"+x+"; Y:"+y);
 
 if (finish==4&&fin==true&&story==0) {
     dispose();
-    new Win("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Win.png");
+    new Win("src/Win.png");
     fin=false;
 }
 
@@ -431,7 +431,7 @@ if (potin==4&&first==true) {
                                 Rectangle rect2 = new Rectangle(me.x - 40, me.y - 40, me.w1 + 60, me.w2 + 60);
 
                                 if (rect1.intersects(rect2) == true) {
-                                    new Win("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Winwolf.png");
+                                    new Win("src/Winwolf.png");
                                 }
                             }
 
@@ -461,10 +461,10 @@ if (potin==4&&first==true) {
         }
     } ;
 
-    enemy wolf1 = new enemy("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wolf0.png", 2000, 1500,344*2/5,766*2/5);
-    character me = new character("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\U (2).png", xscr/2, yscr/2, 150, 150);
+    enemy wolf1 = new enemy("src/wolf0.png", 2000, 1500,344*2/5,766*2/5);
+    character me = new character("src/U (2).png", xscr/2, yscr/2, 150, 150);
 
-obj_pick pic = new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Без названия.png",2500, 1500, 100,100 );
+obj_pick pic = new obj_pick("src/Без названия.png",2500, 1500, 100,100 );
 
     BufferedImage  bi;
     BufferedImage f;
@@ -486,15 +486,15 @@ BufferedImage axe;
 //            dead[i]=false;
 //        }
 
-        try{  bush = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\bush.png"));    } catch (IOException e) {    }
-        try{  mushroom = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\mushroom.png"));    } catch (IOException e) {    }
-        try{  grass = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\grass1.png"));  } catch (IOException e) {    }
+        try{  bush = ImageIO.read(new File("src/bush.png"));    } catch (IOException e) {    }
+        try{  mushroom = ImageIO.read(new File("src/mushroom.png"));    } catch (IOException e) {    }
+        try{  grass = ImageIO.read(new File("src/grass1.png"));  } catch (IOException e) {    }
 
 
-        try{  hu = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\1771348523058.png"));    } catch (IOException e) {    }
-        try{  f = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\noname.png"));    } catch (IOException e) {    }
-        try{  hp = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\hp.png"));    } catch (IOException e) {    }
-        try{  axe = ImageIO.read(new File("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\34fabfc492ea8cd1a482dae1679e6754-Photoroom.png"));  } catch (IOException e) {    }
+        try{  hu = ImageIO.read(new File("src/1771348523058.png"));    } catch (IOException e) {    }
+        try{  f = ImageIO.read(new File("src/noname.png"));    } catch (IOException e) {    }
+        try{  hp = ImageIO.read(new File("src/hp.png"));    } catch (IOException e) {    }
+        try{  axe = ImageIO.read(new File("src/34fabfc492ea8cd1a482dae1679e6754-Photoroom.png"));  } catch (IOException e) {    }
 
         setSize(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().getSize().width,GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().getSize().height ); //1920,1080);
         setVisible(true);
@@ -509,7 +509,7 @@ for(int i=0; i<inv.length;i++) {
         my_timer.start();
         hunger.start();
 
-        FileInputStream fis = new FileInputStream("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Map_01.xlsx"); // } catch (IOException e) {    }
+        FileInputStream fis = new FileInputStream("src/Map_01.xlsx"); // } catch (IOException e) {    }
 
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         System.out.println("DataSheet.xlsx file opened successfully");
@@ -522,45 +522,45 @@ if (type==0) {
     type=1;
 }
 if (type==1) {
-    sup[i] = new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Без названия.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+    sup[i] = new obj_pick("src/Без названия.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
     System.out.println("Сщздал");
 }
 else if (type==2) {
-    sup[i] = new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\34fabfc492ea8cd1a482dae1679e6754-Photoroom.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+    sup[i] = new obj_pick("src/34fabfc492ea8cd1a482dae1679e6754-Photoroom.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
     sup [i].type=type;
 }
 else if (type==3) {
-    sup[i] = new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\1771348523058.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+    sup[i] = new obj_pick("src/1771348523058.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
     sup [i].type=type;
 }
 else {
-    sup[i] = new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\vd4yrq7ofue51.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+    sup[i] = new obj_pick("src/vd4yrq7ofue51.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
     sup [i].type=type;
 }
 
         }
 
-        sup[20]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-214-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 189 );
-        sup[21]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-2141-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 238 );
-        sup[22]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-2142-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 182 );
-        sup[23]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-2143-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 217 );
+        sup[20]=new obj_pick("src/70019-ODEI3S-214-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 189 );
+        sup[21]=new obj_pick("src/70019-ODEI3S-2141-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 238 );
+        sup[22]=new obj_pick("src/70019-ODEI3S-2142-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 182 );
+        sup[23]=new obj_pick("src/70019-ODEI3S-2143-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 217 );
 
         sup[20].type=10;
         sup[21].type=10;
         sup[22].type=10;
         sup[23].type=10;
 
-        sup [24+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-214-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 189 );
-        sup[25+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\70019-ODEI3S-214-Photoroom.png", xp, yp, 70, 189 );
+        sup [24+kolwolf]=new obj_pick("src/70019-ODEI3S-214-Photoroom.png", random.nextInt(xmax),random.nextInt(ymax), 70, 189 );
+        sup[25+kolwolf]=new obj_pick("src/70019-ODEI3S-214-Photoroom.png", xp, yp, 70, 189 );
 
         sup[24+kolwolf].type=4;
         sup[25+kolwolf].type=4;//random.nextInt((int)(xmax/2))   random.nextInt((int)(ymax/2))
 
-        sup[26+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png", xmax/2,ymax/2,50,50);
-        sup[27+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr2.png", xmax/2,ymax/2,50,50);
-        sup[28+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr3.png", xmax/2,ymax/2,50,50);
-        sup[29+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr4.png", xmax/2,ymax/2,50,50);
-        sup[30+kolwolf]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\potion.png", xmax/2,ymax/2,50,50);
+        sup[26+kolwolf]=new obj_pick("src/wr1.png", xmax/2,ymax/2,50,50);
+        sup[27+kolwolf]=new obj_pick("src/wr2.png", xmax/2,ymax/2,50,50);
+        sup[28+kolwolf]=new obj_pick("src/wr3.png", xmax/2,ymax/2,50,50);
+        sup[29+kolwolf]=new obj_pick("src/wr4.png", xmax/2,ymax/2,50,50);
+        sup[30+kolwolf]=new obj_pick("src/potion.png", xmax/2,ymax/2,50,50);
 
         sup[26+kolwolf].type=5;
         sup[27+kolwolf].type=6;
@@ -597,16 +597,16 @@ else {
                       switch (basa[count][4])
                         {
                       case (1):
-                        bushes[count] = new obj("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\grass1.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
+                        bushes[count] = new obj("src/grass1.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
                         break;
                       case (2):
-                        bushes[count] = new obj("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\bush.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
+                        bushes[count] = new obj("src/bush.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
                         break;
                       case (3):
-                        bushes[count] = new obj("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\mushroom.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
+                        bushes[count] = new obj("src/mushroom.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
                         break;
                         default:
-                        bushes[count] = new obj("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\bush.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
+                        bushes[count] = new obj("src/bush.png", basa[count][0], basa[count][1], basa[count][2], basa[count][3]);
                         break;
                         }
                        count++; System.out.print(k); System.out.print(count);
@@ -627,8 +627,8 @@ else {
            basa[i+kolbush][3] = basa[i][2] ;
            basa[i+kolbush][4] = 1;
            basa[i+kolbush][5] = 4;
-          snakes[i] = new enemy("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\photo_2025-12-16_19-55-46-Photoroom.png",basa[i+kolbush][0], basa[i+kolbush][1], basa[i+kolbush][2], basa[i+kolbush][3] );
-           sup[24+i]=new obj_pick("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\1771348523058.png",snakes[i].x,snakes[i].y,50,50);
+          snakes[i] = new enemy("src/photo_2025-12-16_19-55-46-Photoroom.png",basa[i+kolbush][0], basa[i+kolbush][1], basa[i+kolbush][2], basa[i+kolbush][3] );
+           sup[24+i]=new obj_pick("src/1771348523058.png",snakes[i].x,snakes[i].y,50,50);
            sup[24+i].pickable=0;
            sup[24+i].type=3;
            dead[i]=true;
@@ -1017,9 +1017,9 @@ public boolean use_shield (boolean shield) {
 public int use_wrt1 (int potin, int story) {
         if (type==5) {
 use--;
-new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\root.png", "C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png");
-new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\mox.png", "C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png");
-new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wat.png", "C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png");
+new root2("src/root.png", "src/wr1.png");
+new root2("src/mox.png", "src/wr1.png");
+new root2("src/wat.png", "src/wr1.png");
 potin=potin+3;
 story++;
         }
@@ -1032,7 +1032,7 @@ story++;
     }
     public void use_wrt2 (int story){
 if (type==6){
-    new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr2.png", null);
+    new root2("src/wr2.png", null);
     use--;
     story++;
 }
@@ -1041,7 +1041,7 @@ if (type==6){
 
     public void use_wr3 ( int story) {
         if (type==7){
-            new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr3.png", null);
+            new root2("src/wr3.png", null);
             use--;
             story++;
         }
@@ -1051,7 +1051,7 @@ if (type==6){
 
     public int use_wr4 (int potin, int story) {
         if (type==8){
-            new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\fl.png","C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr4.png" );
+            new root2("src/fl.png","src/wr4.png" );
             use--;
             potin++;
             story++;
@@ -1100,8 +1100,8 @@ class child {
 class inventory {
 
 
-    Image in =Toolkit.getDefaultToolkit().createImage("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\IMG_20260120_214856.jpg") ;
-    Image choosable = Toolkit.getDefaultToolkit().createImage("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\IMG_20260127_215309.png") ;
+    Image in =Toolkit.getDefaultToolkit().createImage("src/IMG_20260120_214856.jpg") ;
+    Image choosable = Toolkit.getDefaultToolkit().createImage("src/IMG_20260127_215309.png") ;
 
     int x=400; //координата первого квадрата
     int y=600;

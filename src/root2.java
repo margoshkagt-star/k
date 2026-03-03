@@ -29,9 +29,9 @@ public class root2 extends JFrame {
 
         _w=w;
 
-        p = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\U (2).png");
+        p = Toolkit.getDefaultToolkit().getImage("src/U (2).png");
         r = Toolkit.getDefaultToolkit().getImage(s);
-        fon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\noname.png");
+        fon = Toolkit.getDefaultToolkit().getImage("src/noname.png");
 
         addMouseListener(mouseListener);
 
@@ -88,8 +88,5 @@ dispose();
         }
     };
 
-public static void main (String [] args) {
-    new root2("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png", "C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\wr1.png");
-}
 
 }

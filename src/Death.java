@@ -18,7 +18,7 @@ public class Death extends JFrame {
             setTitle("GAME");
 
 
-            image = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Tikho\\IdeaProjects\\untitled6 — копия 2 — копия (2)\\src\\Death.png");
+            image = Toolkit.getDefaultToolkit().getImage("src/Death.png");
             //image_quit=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/quit.png");
             //image_start=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/start.png");
             //check=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/bro.png");
