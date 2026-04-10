@@ -4,18 +4,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
-public class Hello extends JFrame  {
+public class choose extends JFrame  {
     public Image image;
-
+int xscr= getWidth();
+int yscr= getHeight();
 
     BufferedImage  bi;
 
-    Hello() {
+    choose() {
 // Set the title of the JFrameaa
         setTitle("GAME");
 
 
-        image = Toolkit.getDefaultToolkit().getImage("src/pic/Start.png");
+        image = Toolkit.getDefaultToolkit().getImage("src/pic/Выбор режима в магическом лесу.png");
         //image_quit=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/quit.png");
         //image_start=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/start.png");
         //check=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/bro.png");
@@ -25,7 +26,7 @@ public class Hello extends JFrame  {
         setVisible(true);
         addMouseListener(ml);
 
-        bi = new BufferedImage(getWidth(), getHeight(), 2);
+        bi = new BufferedImage(xscr, yscr, 2);
     }
 
     @Override
@@ -39,15 +40,8 @@ public class Hello extends JFrame  {
         Graphics2D test = bi.createGraphics();
 
         // Draw the image on the JFrame using drawImage()
-        test.drawImage(image, 0, 0, getWidth(),getHeight(),this);
+        test.drawImage(image, 0, 0, this);
         g.drawImage(bi,0,0,this);
-        System.out.println(getWidth() + " "+ getHeight());
-    }
-
-    public static void main(String[] args) {
-        // Run the application on the Event Dispatch Thread (EDT)
-        new Hello();
-
     }
 
     public MouseListener ml = new MouseListener() {
@@ -56,12 +50,15 @@ public class Hello extends JFrame  {
 
             int x =e.getX();
             int y= e.getY();
-            if ((x>(int)(getWidth()*0.645))&&(x<(int)(getWidth()*0.859))&&(y>(int)(getHeight()*0.623))&&(y<(int)(getHeight()*0.741))){
-                System.exit(0);
+            if ((x>getWidth()*0.113)&&(x<getWidth()*0.437)&&(y>getHeight()*0.573)&&(y<getHeight()*0.913)){
+                try { new game();}
+                catch (Exception h) {}
+dispose();
             }
-            if ((x>(int)(getWidth()*0.645))&&(x<(int)(getWidth()*0.859))&&(y>(int)(getHeight()*0.473))&&(y<(int)(getHeight()*0.589))){
+            if ((x>getWidth()*0.546)&&(x<getWidth()*0.883)&&(y>getHeight()*0.573)&&(y<getHeight()*0.913)){
+
+                try{  new level_choose();   } catch (Exception h) {    }
                 dispose();
-                try{  new choose();   } catch (Exception h) {    }
             }
             System.out.println(x+ " "+y);
         }
@@ -90,5 +87,3 @@ public class Hello extends JFrame  {
 
 
 }
-
-

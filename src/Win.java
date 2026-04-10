@@ -62,7 +62,7 @@ public class Win extends JFrame {
             }
             if ((x>609)&&(x<914)&&(y>126)&&(y<198)){
                 dispose();
-                try{  new game();   } catch (Exception h) {    }
+                try{  new Hello();   } catch (Exception h) {    }
             }
             System.out.println(x+ " "+y);
         }

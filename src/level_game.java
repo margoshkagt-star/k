@@ -16,9 +16,11 @@ import java.io.IOException;
 import java.util.Random;
 
 
-public class game extends JFrame {
+public class level_game extends JFrame {
     Toolkit toolkit= Toolkit.getDefaultToolkit();
     Dimension screenSize = toolkit.getScreenSize();
+
+    int dif;
 
     int potin =0;
     int story=0;
@@ -48,7 +50,7 @@ public class game extends JFrame {
 
     public obj [] bushes = new obj [kolbush];
     int [][] basa = new int [kol][12];
-    public obj_pick [] sup =new obj_pick[24+kolwolf+2+4+1];
+    public obj_pick [] sup =new obj_pick[24+kolwolf];
 
     int [] inv = new int[abc.k];
 
@@ -102,45 +104,51 @@ public class game extends JFrame {
     MouseListener ml = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            int x,y;
-            x=e.getX();
-            y=e.getY();
-            System.out.println(x+ " "+y);
-            if (((x>ax-100&&ax+100>x)&&(117-100<y&&117+100>y))&&use>0) {
-                abl1=1;
+            int x, y;
+            x = e.getX();
+            y = e.getY();
+            System.out.println(x + " " + y);
 
-            }
-            //            else if (((1319-100<x&&1419>x)&&(117-100<y&&117+100>y))&&abl1==1) {
-            //                abl1=0;
-            //            }
-            if (((x>bx-100&&bx+100>x)&&(117-100<y&&117+100>y))) {
-                abl1=2;
-            }
-            if (((x>mx-100&&mx+100>x)&&(117-100<y&&117+100>y))) {
-                abl1=3;
-            }
-            if (((x>gx-100&&gx+100>x)&&(117-100<y&&117+100>y))) {
-                abl1=4;
-            }
-            else {}
-            System.out.println("X:"+x+"; Y:"+y);
+            if (dif!=3&&dif!=4) {
+
+                if (((x > ax - 100 && ax + 100 > x) && (117 - 100 < y && 117 + 100 > y)) && use > 0) {
+                    abl1 = 1;
+
+                }
+                //            else if (((1319-100<x&&1419>x)&&(117-100<y&&117+100>y))&&abl1==1) {
+                //                abl1=0;
+                //            }
+
+                if (dif != 2) {
+
+                    if (((x > bx - 100 && bx + 100 > x) && (117 - 100 < y && 117 + 100 > y))) {
+                        abl1 = 2;
+                    }
+                    if (((x > mx - 100 && mx + 100 > x) && (117 - 100 < y && 117 + 100 > y))) {
+                        abl1 = 3;
+                    }
+                    if (((x > gx - 100 && gx + 100 > x) && (117 - 100 < y && 117 + 100 > y))) {
+                        abl1 = 4;
+                    }
+                } else {
+                }
+                System.out.println("X:" + x + "; Y:" + y);
+
+if (dif!=3&&dif!=4){
+                if (abc.onoff == true) {
+                    abc.clean();
+
+                    int r = abc.choose(x, y);
 
 
-
-            if (abc.onoff==true) {
-                abc.clean();
-
-                int r = abc.choose(x, y);
-
-
-
-                if (r != -1) {
-                    abc.inv[3][r]=1;
-                    System.out.println("Присвоил");
+                    if (r != -1) {
+                        abc.inv[3][r] = 1;
+                        System.out.println("Присвоил");
+                    }
                 }
             }
 
-
+        }//
 
         }
 
@@ -166,22 +174,6 @@ public class game extends JFrame {
         }
     };
 
-    /*public void hunt (enemy kakashka, character me, int xp, int yp) {
-        int dx = (kakashka.x - xp - me.x);
-        int dy = (kakashka.y - yp- me.y);
-        double distance= Math.sqrt(dx*dx+dy*dy);
-
-
-        if (distance<=400) {
-            kakashka.x -= 5 * dx / distance;
-            kakashka.y -= 5 * dy / distance;
-
-            if (collision(me, kakashka,xp,yp) == true) {
-                me.health--;
-                kakashka.x += (int) (100 * (dx / distance));
-            }
-        }*/
-
     ActionListener al = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -191,29 +183,26 @@ public class game extends JFrame {
             }
 
 
-            if(story<4||finish<4) {
-                wolf1.hunt(wolf1, me, xp, yp, shield);
-            }
 
-            for (int i = 0; i < kolwolf; i++) {
+if (dif!=4) {
+    for (int i = 0; i < kolwolf; i++) {
 
-                if (basa[i + kolbush][5] <= 0&&dead[i]==false) continue;
-                if (basa[i + kolbush][5] <= 0&&dead[i]==true) {
-                    sup[24+i].pickable=1;
+        if (basa[i + kolbush][5] <= 0 && dead[i] == false) continue;
+        if (basa[i + kolbush][5] <= 0 && dead[i] == true) {
+            sup[24 + i].pickable = 1;
 
-                    dead[i]=false;
-                }
-                else {
-                    snakes[i].hunt(snakes[i], me, xp, yp,shield);
-                    sup[24+i].x=snakes[i].x;
-                    sup[24+i].y=snakes[i].y;
-                }
+            dead[i] = false;
+        } else {
+            snakes[i].hunt(snakes[i], me, xp, yp, shield);
+            sup[24 + i].x = snakes[i].x;
+            sup[24 + i].y = snakes[i].y;
+        }
 
-            }
+    }
+}
 
 
-
-            if (finish==4&&fin==true&&story==0) {
+            if (finish==4&&fin==true) {
                 dispose();
                 new Win("src/pic/WinNoWolf.png");
                 fin=false;
@@ -225,14 +214,6 @@ public class game extends JFrame {
                 dea=false;
             }
 
-            if (potin==4&&first==true) {
-                sup[30 + kolwolf].x=me.x+xp;
-                sup[30 + kolwolf].y=me.y +yp;
-
-                sup[30 + kolwolf].pickable=1;
-
-                first=false;
-            }
             repaint();
         }
 
@@ -256,32 +237,31 @@ public class game extends JFrame {
             int wcol=0;
             int scol=0;
 
-            if ((key == KeyEvent.VK_E)) {
+            if ((key == KeyEvent.VK_E)&&dif!=3&&dif!=4) {
 
-                // for (int i=0; i<kolbush;i++) {
+if (dif==1) {
+    for (int i = 0; i < kolbush; i++) {
 
-                //  }
+        if (basa[i][5] > 0) {
+            Rectangle rect1 = new Rectangle(bushes[i].x - xp, bushes[i].y - yp, bushes[i].w1, bushes[i].w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
+            Rectangle rect2 = new Rectangle(me.x - 20, me.y - 20, me.w1 + 40, me.w2 + 40);
 
 
-                for (int i=0; i<kolbush;i++) {
+            if (rect1.intersects(rect2) == true && abl1 == 1 && use > 0) {
+                basa[i][5] = basa[i][5] - 5;
+                use--;
+            } else if (rect1.intersects(rect2) == true && abl1 == 2 && basa[i][4] == 1) {
+                basa[i][5]--;
+            } else if (rect1.intersects(rect2) == true && abl1 == 3 && basa[i][4] == 2) {
+                basa[i][5]--;
+            } else if (rect1.intersects(rect2) == true && abl1 == 4 && basa[i][4] == 0) {
+                basa[i][5]--;
+            } else {
+            }
+        }
+    }
+}
 
-                    if (basa[i][5] > 0) {
-                        Rectangle rect1 = new Rectangle(bushes[i].x - xp, bushes[i].y - yp, bushes[i].w1, bushes[i].w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
-                        Rectangle rect2 = new Rectangle(me.x - 20, me.y - 20, me.w1 + 40, me.w2 + 40);
-
-                        if (rect1.intersects(rect2) == true && abl1 == 1 && use > 0) {
-                            basa[i][5] = basa[i][5] - 5;
-                            use--;
-                        } else if (rect1.intersects(rect2) == true && abl1 == 2 && basa[i][4] == 1) {
-                            basa[i][5]--;
-                        } else if (rect1.intersects(rect2) == true && abl1 == 3 && basa[i][4] == 2) {
-                            basa[i][5]--;
-                        } else if (rect1.intersects(rect2) == true && abl1 == 4 && basa[i][4] == 0) {
-                            basa[i][5]--;
-                        } else {
-                        }
-                    }
-                }
                 for (int i = 0; i < kolwolf; i++) {
                     if (basa[i+kolbush][5] > 0) {
                         Rectangle rect1 = new Rectangle(snakes[i].x - xp, snakes[i].y - yp, snakes[i].w1, snakes[i].w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
@@ -360,14 +340,15 @@ public class game extends JFrame {
 
             }
 
-            if (key == KeyEvent.VK_Q) {
+
+            if ((key == KeyEvent.VK_Q)&&dif!=3&&dif!=4) {
                 if (abc.onoff==false) abc.onoff=true;
                 else abc.onoff=false;
             }
 
 
 
-            if (key == KeyEvent.VK_R) {
+            if ((key == KeyEvent.VK_R)&&dif!=3&&dif!=4) {
 
                 for (int i=0; i<abc.k; i++) {
                     if (abc.inv[2][i]==1 && sup[inv[i]].use==0) {
@@ -379,6 +360,7 @@ public class game extends JFrame {
 
 
                 for (int i=0; i<sup.length; i++) {
+
                     Rectangle rect1 = new Rectangle(sup[i].x - xp, sup[i].y - yp, sup[i].w1, sup[i].w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
                     Rectangle rect2 = new Rectangle(me.x - 20, me.y - 20, me.w1 + 40, me.w2 + 40);
 
@@ -392,6 +374,7 @@ public class game extends JFrame {
                             inv[inv1] = i;
                         }
                     }
+
                 }
 
 
@@ -401,7 +384,7 @@ public class game extends JFrame {
 
 
 
-            if (key == KeyEvent.VK_T) {
+            if ((key == KeyEvent.VK_T)&&dif!=3&&dif!=4) {
 
 
                 for (int i=0; i<abc.k; i++) {
@@ -412,7 +395,8 @@ public class game extends JFrame {
                             use = sup[inv[i]].use_axe(use);
                             finish = sup[inv[i]].use_kid(finish);
                             sup[inv[i]].use_food(me);
-                            shield=sup[inv[i]].use_shield(shield);
+
+                            if(dif!=2) shield=sup[inv[i]].use_shield(shield);
 
                             potin=sup[inv[i]].use_wrt1(potin,story);
                             sup[inv[i]].use_wrt2(story);
@@ -424,15 +408,6 @@ public class game extends JFrame {
 
                             if(sup[inv[i]].type==5||sup[inv[i]].type==6||sup[inv[i]].type==7||sup[inv[i]].type==8) {
                                 story=sup[inv[i]].use_st(story);
-                            }
-
-                            if (inv[i]==30+kolwolf&&story==4&&finish==4) {
-                                Rectangle rect1 = new Rectangle(wolf1.x-xp, wolf1.y - yp, wolf1.w1, wolf1.w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
-                                Rectangle rect2 = new Rectangle(me.x - 40, me.y - 40, me.w1 + 60, me.w2 + 60);
-
-                                if (rect1.intersects(rect2) == true) {
-                                    new Win("src/pic/WinWolf.png");
-                                }
                             }
 
                         }
@@ -461,7 +436,7 @@ public class game extends JFrame {
         }
     } ;
 
-    enemy wolf1 = new enemy("src/pic/Wolf.png", 2000, 1500,344*2/5,766*2/5);
+
     character me = new character("src/pic/FiremanW.png", xscr/2, yscr/2, 150, 150);
 
     BufferedImage  bi;
@@ -475,7 +450,7 @@ public class game extends JFrame {
     BufferedImage grass;
 
     float k;
-    public game() throws Exception
+    public level_game(File fil, int dif_) throws Exception
     {
 //        for (int i=0; i<kolwolf; i++) {
 //
@@ -483,6 +458,7 @@ public class game extends JFrame {
 //            snake[i].pickable=0;
 //            dead[i]=false;
 //        }
+dif=dif_;
 
         try{  bush = ImageIO.read(new File("src/pic/Bush.png"));    } catch (IOException e) {    }
         try{  mushroom = ImageIO.read(new File("src/pic/Wood.png"));    } catch (IOException e) {    }
@@ -507,7 +483,7 @@ public class game extends JFrame {
         my_timer.start();
         hunger.start();
 
-        FileInputStream fis = new FileInputStream("src/Таблица (2).xlsx"); // } catch (IOException e) {    }
+        FileInputStream fis = new FileInputStream(fil); // } catch (IOException e) {    }
 
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         System.out.println("DataSheet.xlsx file opened successfully");
@@ -536,6 +512,29 @@ public class game extends JFrame {
                 sup [i].type=type;
             }
 
+            if (dif==2) {
+                while (type==2) type=random.nextInt(5);
+                if (type==0) {
+                    type=1;
+                }
+                if (type==1) {
+                    sup[i] = new obj_pick("src/pic/Bandage.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+                    System.out.println("Сщздал");
+                }
+                else if (type==2) {
+                    sup[i] = new obj_pick("src/pic/FireAxe.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+                    sup [i].type=type;
+                }
+                else if (type==3) {
+                    sup[i] = new obj_pick("src/pic/Chicken.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+                    sup [i].type=type;
+                }
+                else {
+                    sup[i] = new obj_pick("src/pic/Shield.png", random.nextInt(xmax), random.nextInt(ymax), 100, 100);
+                    sup [i].type=type;
+                }
+            }
+
         }
 
         sup[20]=new obj_pick("src/pic/Child1.png", random.nextInt(xmax),random.nextInt(ymax), 70, 189 );
@@ -547,26 +546,6 @@ public class game extends JFrame {
         sup[21].type=10;
         sup[22].type=10;
         sup[23].type=10;
-
-        sup [24+kolwolf]=new obj_pick("src/pic/Shield.png", random.nextInt(xmax),random.nextInt(ymax), 100, 189 );
-        sup[25+kolwolf]=new obj_pick("src/pic/Shield.png",random.nextInt(xmax) , random.nextInt(ymax), 70, 189 );
-
-        sup[24+kolwolf].type=4;
-        sup[25+kolwolf].type=4;//random.nextInt((int)(xmax/2))   random.nextInt((int)(ymax/2))
-
-        sup[26+kolwolf]=new obj_pick("src/oldpic/wr1.png", random.nextInt(xmax),random.nextInt(ymax)/2,50,50);
-        sup[27+kolwolf]=new obj_pick("src/oldpic/wr2.png", random.nextInt(xmax),random.nextInt(ymax),50,50);
-        sup[28+kolwolf]=new obj_pick("src/oldpic/wr3.png", random.nextInt(xmax),random.nextInt(ymax),50,50);
-        sup[29+kolwolf]=new obj_pick("src/oldpic/wr4.png", random.nextInt(xmax),random.nextInt(ymax),50,50);
-        sup[30+kolwolf]=new obj_pick("src/oldpic/potion.png", random.nextInt(xmax),random.nextInt(ymax),50,50);
-
-        sup[26+kolwolf].type=5;
-        sup[27+kolwolf].type=6;
-        sup[28+kolwolf].type=7;
-        sup[29+kolwolf].type=8;
-        sup[30+kolwolf].type=9;
-
-        sup[30+kolwolf].pickable=0;
 
         int count=0;
         double k;
@@ -649,30 +628,7 @@ public class game extends JFrame {
         //f= f.getScaledInstance((int)(f.getWidth()*k), (int)(f.getHeight()*k), Image.SCALE_SMOOTH );
 
         test.drawImage(f,0,0,this );
-
-
-
-
-
-//        int dx = (wolf1.x+wolf1.w1/2 - me.x-me.w1/2); // расстояние по х нормированное по серединам картинок
-//        int dy = (wolf1.y+wolf1.w2/2 - me.y-me.w2/2);
-//        double distance= Math.sqrt(dx*dx+dy*dy);
-        AffineTransform at = new AffineTransform();
-        double angle = wolf1.rotate1(wolf1, me, xp, yp); // Поворот на 45 градусов
-        int x = wolf1.x + wolf1.w1 / 2 - xp;// Центр по X
-        int y = wolf1.y + wolf1.w2 / 2 - yp;// Центр по Y
-        at.rotate(angle, x, y);
-        test.setTransform(at);  //Создаю преобразование
-
-        //Поворачиваю вокруг x,y
-        // "Добавляю" (применяю) поворот вокруг x,y
-
-
-        test.drawImage(wolf1.image, wolf1.x-xp, wolf1.y-yp, wolf1.w1, wolf1.w2,  this); //Рисую волка с примененным поворотом
-        test.setTransform(new AffineTransform()); //Создаю и сразу применяю пустую прансформацию (т.е. она ничего не крутит)
-
         test.drawImage(me.image,me.x,me.y,me.w1, me.w2,this);
-
 
         for(int i=0; i<kolbush; i++) { //с помощью цикла отрисовываю все кусты
             if(basa[i][5]<=0) continue;
@@ -681,43 +637,44 @@ public class game extends JFrame {
 
 
 
+if (dif!=4) {
+    for (int i = 0; i < kolwolf; i++) { //с помощью цикла отрисовываю все кусты
 
-        for(int i=0; i<kolwolf; i++) { //с помощью цикла отрисовываю все кусты
 
+        AffineTransform at1 = new AffineTransform(); //Создаю преобразование
+        double angle1 = snakes[i].rotate1(snakes[i], me, xp, yp); // Поворот на 45 градусов
+        int x1 = snakes[i].x + snakes[i].w1 / 2 - xp;// Центр по X
+        int y1 = snakes[i].y + snakes[i].w2 / 2 - yp; // Центр по Y
+        at1.rotate(angle1, x1, y1); //Поворачиваю вокруг x,y
+        // "Добавляю" (применяю) поворот вокруг x,y
 
-
-            AffineTransform at1 = new AffineTransform(); //Создаю преобразование
-            double angle1 = snakes[i].rotate1(snakes[i], me, xp,yp); // Поворот на 45 градусов
-            int x1 = snakes[i].x+snakes[i].w1/2 - xp;// Центр по X
-            int y1 =snakes[i].y+snakes[i].w2/2 - yp; // Центр по Y
-            at1.rotate(angle1, x1, y1); //Поворачиваю вокруг x,y
-            // "Добавляю" (применяю) поворот вокруг x,y
-
-            if (basa[i+kolbush][5]<=0)
-            {
-                continue;
-            }
-            else
-            {
-                test.setTransform(at1);
-                test.drawImage(snakes[i].image, snakes[i].x - xp, snakes[i].y - yp, snakes[i].w1, snakes[i].w2, this);
-            }
-
-            test.setTransform(new AffineTransform());
-
+        if (basa[i + kolbush][5] <= 0) {
+            continue;
+        } else {
+            test.setTransform(at1);
+            test.drawImage(snakes[i].image, snakes[i].x - xp, snakes[i].y - yp, snakes[i].w1, snakes[i].w2, this);
         }
 
+        test.setTransform(new AffineTransform());
+
+    }
+}
+
+if (dif!=3&&dif!=4){
         for (int i=0; i< sup.length; i++) {
+            if(dif==1){
             if (sup [i].pickable == 1) {
-                test.drawImage(sup[i].image, sup[i].x - xp, sup[i].y - yp, 100, 100, this);
-            }
-        }
+                test.drawImage(sup[i].image, sup[i].x - xp, sup[i].y - yp, sup[i].w1, sup[i].w2, this);
+            }}
+        }}
 
-        for (int i=0; i< sup.length; i++) {
-            if (sup [i].pickable == 1) {
-                test.drawImage(sup[i].image, sup[i].x - xp, sup[i].y - yp, 100, 100, this);
-            }
-        }
+        if (dif!=3&&dif!=4){
+            for (int i=0; i< sup.length; i++) {
+                if(dif==1){
+                    if (sup [i].pickable == 1) {
+                        test.drawImage(sup[i].image, sup[i].x - xp, sup[i].y - yp, sup[i].w1, sup[i].w2, this);
+                    }}
+            }}
 
 
         if (me.health>=1){
@@ -760,14 +717,14 @@ public class game extends JFrame {
             test.drawImage(hu,56+h*8,623, h,h,this );
         }
 
-        test.drawImage(axe,1319,117,100,100,this );
+        if(dif!=3&&dif!=4) test.drawImage(axe,1319,117,100,100,this );
 
+        if (dif==1) {
+            test.drawImage(bush, 1216, 117, 100, 100, this);
+            test.drawImage(mushroom, 1113, 117, 100, 100, this);
+            test.drawImage(grass, 1010, 117, 100, 100, this);
+        }
 
-
-
-        test.drawImage(bush,1216,117,100,100,this );
-        test.drawImage(mushroom,1113,117,100,100,this );
-        test.drawImage(grass,1010,117,100,100,this );
 
         if(abl1==1&&use>0) {
             test.fillRect(ax-10, 117-10, 20,20);
@@ -803,389 +760,9 @@ public class game extends JFrame {
             }
         }
 
-
-//        for (int i=0; i< sup.length; i++) {
-//            if (sup [i].pickable == 1) {
-//               test.drawImage(sup[i].image, sup[i].x - xp, sup[i].y - yp, sup[i].w1, sup[i].w2, this);
-//            }
-//        }
-
-
-
-
-//        AlphaComposite alphaComposite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f);
-//        test.setComposite(alphaComposite);
-
-
         g.drawImage(bi,0,0,this); //отрисовываю холст
 
 
-    }
-
-
-
-//    public static void main(String[] args) throws Exception
-//    {
-//
-//
-//
-//
-//        new game();
-//
-//
-//    }
-
-
-}
-
-class character
-{
-    Image image;
-    int x,y, health, hung;
-    int w1, w2;
-
-    boolean anticollision(obj c1,character c2,int  dx,int dy, int xp, int yp) {
-
-        Rectangle rect1 = new Rectangle(c1.x-xp , c1.y -yp, c1.w1, c1.w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
-        Rectangle rect2 = new Rectangle(c2.x+dx, c2.y+dy, c2.w1, c2.w2);
-
-        return rect1.intersects(rect2);
-    }
-
-    character(String s, int _x, int _y, int _w1, int _w2 )
-    {
-        x= _x-_w1/2;
-        y= _y-_w2/2;
-        image = Toolkit.getDefaultToolkit().createImage(s);
-        health = 3;
-        hung=100;
-        w1= _w1;
-        w2=_w2;
-    }
-
-}
-
-class enemy
-{
-
-    Image image;
-    int x,y, health;
-    int w1, w2;
-
-    enemy(String s, int _x, int _y, int _w1, int _w2 )
-    {
-        x= _x-_w1/2;
-        y= _y-_w2/2;
-        image = Toolkit.getDefaultToolkit().createImage(s);
-        health = 3;
-        w1= _w1;
-        w2=_w2;
-    }
-
-    public void hunt (enemy kakashka, character me, int xp, int yp, boolean shield) {
-        int dx = (kakashka.x - xp - me.x);
-        int dy = (kakashka.y - yp- me.y);
-        double distance= Math.sqrt(dx*dx+dy*dy);
-
-
-        if (distance<=400) {
-            kakashka.x -= 5 * dx / distance;
-            kakashka.y -= 5 * dy / distance;
-
-            if (collision(me, kakashka,xp,yp) == true) {
-                if (shield==false) {
-                    me.health--;
-                }
-                kakashka.x += (int) (100 * (dx / distance));
-            }
-        }
-
-    }
-
-    public double rotate1 (enemy e1, character me, int xp, int yp) {
-        int dx = (e1.x +e1.w1/2- xp- me.x-me.w1/2);
-        int dy = (e1.y +e1.w2/2- yp - me.y-me.w2/2);
-        double ygol;
-        double distance= Math.sqrt(dx*dx+dy*dy);
-        if (dy>0) {
-            ygol =  -Math.asin(dx/ distance);
-
-        }
-        else ygol =  3.14+ Math.asin(dx/ distance);
-
-        return ygol;
-    }
-
-
-    boolean collision(character c1, enemy c2, int xp, int yp) {
-        // Используем класс Rectangle для простого обнаружения пересечений
-        Rectangle rect1 = new Rectangle(c1.x, c1.y, 100, 100);
-        Rectangle rect2 = new Rectangle(c2.x-xp, c2.y-yp,c2.w1 , c2.w2);
-
-        return rect1.intersects(rect2);
-    }
-
-}
-
-class obj
-{
-    Image image;
-    int x,y;
-    int w1, w2;
-
-
-    obj(String s, int _x, int _y, int _w1, int _w2)
-    {
-        x= _x-_w1/2;
-        y= _y-_w2/2;
-        w1= _w1;
-        w2=_w2;
-        image = Toolkit.getDefaultToolkit().createImage(s);
-    }
-
-
-
-}
-
-class obj_pick {
-    int pickable=1;
-    int use=1;
-    int type =1;  // 1-medicine, 2-axe
-    int inv=-1;
-
-    Image image;
-    int x,y;
-    int w1, w2;
-    obj_pick (String s, int _x, int _y, int _w1, int _w2) {
-        x= _x-_w1/2;
-        y= _y-_w2/2;
-        w1= _w1;
-        w2=_w2;
-        image = Toolkit.getDefaultToolkit().createImage(s);
-    }
-
-    int d_pick=0;
-    int w1_pick= 50 +d_pick;
-    int w2_pick =d_pick +50;
-
-    public void use_med (character me){
-        if (type ==1) {
-            if (me.health<3) {
-                use--;
-                me.health++;
-            }
-        }
-    }
-
-    public int use_axe (int us) {
-        if (type==2) {
-            use --;
-            us= us+10;
-
-        }
-        return us;
-    }
-
-    public int use_kid (int fin) {
-        if (type ==10) {
-            fin= fin +1;
-            use--;
-        }
-        return fin;
-    }
-
-    public void use_food(character me){
-        if (type==3) {
-            me.hung=me.hung+8;
-            use--;
-
-        }
-    }
-
-    public boolean use_shield (boolean shield) {
-        shield=false;
-        if (type==4) {
-            shield=true;
-            use--;
-
-        }
-        return shield;
-    }
-
-    public int use_wrt1 (int potin, int story) {
-        if (type==5) {
-            use--;
-            new root2("src/pic/root.png", "src/oldpic/wr1.png", 200,200);
-            new root2("src/pic/mox.png", "src/oldpic/wr1.png", 200, 200);
-            new root2("src/pic/wat.png", "src/oldpic/wr1.png", 200, 200);
-            potin=potin+3;
-            story++;
-        }
-        System.out.println("Wrt1");
-        System.out.println(type);
-        return potin;
-    }
-    public void use_pot (){
-
-    }
-    public void use_wrt2 (int story){
-        if (type==6){
-            new root2("src/oldpic/wr2.png", null, 536, 200);
-            use--;
-            story++;
-        }
-        System.out.println("Wrt2");
-    }
-
-    public void use_wr3 ( int story) {
-        if (type==7){
-            new root2("src/oldpic/wr3.png", null,434 ,200 );
-            use--;
-            story++;
-        }
-        System.out.println("Wrt3");
-    }
-
-
-    public int use_wr4 (int potin, int story) {
-        if (type==8){
-            new root2("src/pic/fl.png","src/oldpic/wr4.png", 200, 200 );
-            use--;
-            potin++;
-            story++;
-        }
-        System.out.println("Wrt4");
-        return potin;
-    }
-
-    public int use_st (int story){
-        story++;
-        return story;
-
-    }
-}
-
-class child {
-    Image image;
-    int x,y, health;
-    int w1, w2;
-    int pickable=1;
-
-    boolean anticollision(obj c1,character c2,int  dx,int dy, int xp, int yp) {
-
-        Rectangle rect1 = new Rectangle(c1.x-xp , c1.y -yp, c1.w1, c1.w2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
-        Rectangle rect2 = new Rectangle(c2.x+dx, c2.y+dy, c2.w1, c2.w2);
-
-        return rect1.intersects(rect2);
-    }
-
-
-    child (String s, int _x, int _y, int _w1, int _w2 )
-    {
-        x= _x-_w1/2;
-        y= _y-_w2/2;
-        image = Toolkit.getDefaultToolkit().createImage(s);
-
-        w1= _w1;
-        w2=_w2;
-    }
-
-
-
-
-}
-
-class inventory {
-
-
-    Image in =Toolkit.getDefaultToolkit().createImage("src/oldpic/IMG_20260120_214856.jpg") ;
-    Image choosable = Toolkit.getDefaultToolkit().createImage("src/oldpic/IMG_20260127_215309.png") ;
-
-    int x=400; //координата первого квадрата
-    int y=600;
-
-    int a=50; //длина и ширина квадрата (ячейки) инвентаря
-    int b=a;
-
-    int n=5; //количество ячеек в ряду инвентаря
-    int k=20; //количество ячеек в инвентаре
-    int [][] inv = new int[4][k]; // массив чисел для инвентаря 1-х; 2-y; 3- занята/не занята
-
-    boolean onoff =false;
-
-
-
-    inventory () {
-        int c=0; //колво столбцов
-        for (int i=0; i<k; i++) {
-            if (i - c * n > 5) {
-                c++;
-                System.out.println("прибавил " + c);
-            } // (коор.нач.ин.+(ном.яч.-колво.ряд*колво.в.ряд)
-
-            inv[0][i] = x + i * a - c * n * a; //х координата ячейки инвентаря
-            inv[1][i] = y + b * c;
-
-
-            System.out.println(inv[0][i] + " " + inv[1][i]);
-
-            inv[2][i] = 0;
-            inv[3][i] = 0;
-        }
-
-        inv[0][0] = inv[0][n] ;
-        inv[1][0]= inv[1][k-1];
-    }
-
-
-    public int pick (obj_pick d) {
-        boolean nash=false;
-        int cell=-1;
-        if (d.pickable !=0) {
-
-            for (int i = 1; i < k; i++) {
-
-
-                if (inv[2][i] == 0) {
-                    inv[2][i] = 1;
-                    //nash=true;
-                    cell = i;
-                    d.pickable = 0;
-                    break;
-                } else continue;
-            }
-            if (cell == -1) {
-                inv[2][0] = 1;
-            }
-        }
-        return cell;
-    }
-
-    public int choose (int x, int y) {
-        int r=-1;
-        Rectangle pick = new Rectangle(x, y, 2, 2); //тнимаю глобальные координаты персонажа, чтобы хитбоксы куста не убегалм
-
-        for (int i=0; i<k; i++) {
-
-            Rectangle inc = new Rectangle(inv[0][i]+2,inv[1][i]+2 , a-4, b-4);
-
-            if  ( pick.intersects(inc)==true) {
-                r=i;
-                System.out.println("Нашел");
-                break;
-
-            }
-
-        }
-        return r;
-    }
-
-    public void clean (){
-        for (int i=0; i<k; i++) {
-            inv[3][i]=0;
-            System.out.println("0");
-
-        }
     }
 
 

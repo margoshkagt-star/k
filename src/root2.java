@@ -1,9 +1,7 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 public class root2 extends JFrame {
 
@@ -16,22 +14,25 @@ public class root2 extends JFrame {
     private int flowerX = 800;
     private int flowerY = 250;
 
-    private int flowerWidth = 120;
-    private int flowerHeight = 120;
+    private int flowerWidth;
+    private int flowerHeight;
 
     private BufferedImage buffer;
     public String _w;
-    public root2(String s, String w) {
+    public root2(String s, String w,int Width_,int Height_) {
         setTitle("GAME");
+
+        flowerWidth=Width_;
+        flowerHeight=Height_;
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         _w=w;
 
-        p = Toolkit.getDefaultToolkit().getImage("src/U (2).png");
+        p = Toolkit.getDefaultToolkit().getImage("src/pic/FiremanW.png");
         r = Toolkit.getDefaultToolkit().getImage(s);
-        fon = Toolkit.getDefaultToolkit().getImage("src/noname.png");
+        fon = Toolkit.getDefaultToolkit().getImage("src/pic/noname.png");
 
         addMouseListener(mouseListener);
 
@@ -53,11 +54,10 @@ public class root2 extends JFrame {
             g2.drawImage(fon, 0, 0, getWidth(), getHeight(), this);
 
         if (p != null)
-            g2.drawImage(p, 200, 300, this);
+            g2.drawImage(p, 200, 300,384, 460, this);
 
         if (flowerVisible && r != null)
-            g2.drawImage(r, flowerX, flowerY,
-                    flowerWidth, flowerHeight, this);
+            g2.drawImage(r, flowerX, flowerY, flowerWidth, flowerHeight, this);
 
         if (_w!=null) {
             g2.drawImage(Toolkit.getDefaultToolkit().getImage(_w), 1080, 100, 300, 200, this);

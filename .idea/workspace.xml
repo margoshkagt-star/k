@@ -4,7 +4,118 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa8d15ec-b8b5-4da7-b5f4-895b53d1a2d1" name="Changes" comment="" />
+    <list default="true" id="aa8d15ec-b8b5-4da7-b5f4-895b53d1a2d1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/choose.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/level_choose.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/level_game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oldpic/Untitled (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oldpic/Untitled (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oldpic/Untitled (3).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oldpic/Untitled (4).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/oldpic/Untitled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pic/zelenaja-galochka-64x52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Таблица (2).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Таблица (3).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Таблица (4).xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Таблица (5).xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/1771348523058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/34fabfc492ea8cd1a482dae1679e6754-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/34fabfc492ea8cd1a482dae1679e6754.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/70019-ODEI3S-214-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/70019-ODEI3S-2141-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/70019-ODEI3S-2142-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/70019-ODEI3S-2143-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Death$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/Death$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Death.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/Death.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Game1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Health.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Hello$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/Hello$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Hello.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/Hello.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/IMG_20260120_214856.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/IMG_20260127_215309.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/U (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Win$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/Win$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Win.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Winwolf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/bush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/child.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/fl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/game$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/game$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/game$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/game$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/grass1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/hp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/mox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/mushroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/noname.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/obj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/obj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/obj_pick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/obj_pick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/photo_2025-12-16_19-53-22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/photo_2025-12-16_19-55-46-Photoroom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/photo_2025-12-16_19-55-46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/potion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/root.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/root2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled6/root2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/vd4yrq7ofue51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wolf0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wr1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wr2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wr3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/wr4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled6/Без названия.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1771348523058.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/1771348523058.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/34fabfc492ea8cd1a482dae1679e6754-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/OldAxe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/34fabfc492ea8cd1a482dae1679e6754.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/70019-ODEI3S-214-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/70019-ODEI3S-214-Photoroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/70019-ODEI3S-2141-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/70019-ODEI3S-2141-Photoroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/70019-ODEI3S-2142-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/70019-ODEI3S-2142-Photoroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/70019-ODEI3S-2143-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/70019-ODEI3S-2143-Photoroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Death.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Death.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Game1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Health.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Health.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMG_20260120_214856.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/IMG_20260120_214856.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IMG_20260127_215309.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/IMG_20260127_215309.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Start.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/U (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/U (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Win.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Win.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Win.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Win.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Winwolf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Winwolf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bush.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/bush.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/fire.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fl.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/fl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grass1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/grass1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/hp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mox.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/mox.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mushroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/mushroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noname.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/noname.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photo_2025-12-16_19-53-22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/photo_2025-12-16_19-53-22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photo_2025-12-16_19-55-46-Photoroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/photo_2025-12-16_19-55-46-Photoroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photo_2025-12-16_19-55-46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/photo_2025-12-16_19-55-46.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/potion.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/potion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/root.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/root2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vd4yrq7ofue51.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/vd4yrq7ofue51.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pic/wat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wolf0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wolf0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wr.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wr1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wr1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wr2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wr2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wr3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wr3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wr4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/wr4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Без названия.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/oldpic/Без названия.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,8 +139,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/kitsunechinese/f.git&quot;,
-    &quot;accountId&quot;: &quot;c3aa110d-1fbc-4f03-967f-84947ad0e0ec&quot;
+    &quot;url&quot;: &quot;https://github.com/margoshkagt-star/k.git&quot;,
+    &quot;accountId&quot;: &quot;3fe7f814-9562-41ab-b7f8-39c72f6b11d9&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -59,8 +170,9 @@
     "Application.testik.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Tikho/IdeaProjects/untitled6 — копия 2 — копия (2)",
+    "last_opened_file_path": "C:/Users/Tikho/IdeaProjects/редачу/src",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -69,13 +181,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tikho\IdeaProjects\редачу\src" />
       <recent name="C:\Users\Tikho\IdeaProjects\Финал версия проекта\lib" />
       <recent name="C:\Users\Tikho\IdeaProjects\untitled6\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tikho\IdeaProjects\редачу\src\pic" />
+      <recent name="C:\Users\Tikho\IdeaProjects\редачу\src" />
+      <recent name="C:\Users\Tikho\IdeaProjects\редачу\src\oldpic" />
       <recent name="C:\Users\Tikho\IdeaProjects\Финал версия проекта\lib" />
       <recent name="C:\Users\Tikho\IdeaProjects\untitled6 — копия 2 — копия (2)\src" />
-      <recent name="C:\Users\Tikho\IdeaProjects\untitled6\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

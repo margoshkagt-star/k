@@ -18,7 +18,7 @@ public class Death extends JFrame {
             setTitle("GAME");
 
 
-            image = Toolkit.getDefaultToolkit().getImage("src/Death.png");
+            image = Toolkit.getDefaultToolkit().getImage("src/pic/death_.png");
             //image_quit=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/quit.png");
             //image_start=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/start.png");
             //check=Toolkit.getDefaultToolkit().getImage("C:/Users/user/Downloads/bro.png");
@@ -62,7 +62,7 @@ public class Death extends JFrame {
                 }
                 if ((x>609)&&(x<914)&&(y>126)&&(y<198)){
                     dispose();
-                    try{  new game();   } catch (Exception h) {    }
+                    try{  new Hello();   } catch (Exception h) {    }
                 }
                 System.out.println(x+ " "+y);
             }
